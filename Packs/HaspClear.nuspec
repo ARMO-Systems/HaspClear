@@ -8,10 +8,10 @@
         <description>Очистка сессий HASP ключа</description>
     </metadata>
     <files>
-        <file src="..\Source\_output\Release\Newtonsoft.Json.dll" target="tools\Newtonsoft.Json.dll" />
-        <file src="..\Source\_output\Release\HaspClearService.exe.config" target="tools\HaspClearService.exe.config" />
-        <file src="..\Source\_output\Release\HaspClearService.exe" target="tools\HaspClearService.exe" />
-        <file src="..\Source\_output\Release\HaspClearClient.exe.config" target="tools\HaspClearClient.exe.config" />
         <file src="..\Source\_output\Release\HaspClearClient.exe" target="tools\HaspClearClient.exe" />
+        <file src="..\Source\_output\Release\HaspClearClient.exe.config" target="tools\HaspClearClient.exe.config" />
+        <file src="..\Source\_output\Release\HaspClearService.exe" target="tools\HaspClearService.exe" />
+        <file src="..\Source\_output\Release\HaspClearService.exe.config" target="tools\HaspClearService.exe.config" />
+        <file src="..\Source\_output\Release\Newtonsoft.Json.dll" target="tools\Newtonsoft.Json.dll" />
     </files>
 </package>
