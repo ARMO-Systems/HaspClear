@@ -1,5 +1,5 @@
 ﻿using System;
-using ArmoSystems.ArmoGet.HaspClearClient.DSServiceReference;
+using ArmoSystems.ArmoGet.HaspClearClient.HaspClearServiceReference;
 
 namespace ArmoSystems.ArmoGet.HaspClearClient
 {

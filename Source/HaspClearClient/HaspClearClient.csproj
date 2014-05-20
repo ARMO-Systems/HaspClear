@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ArmoSystems.ArmoGet.HaspClearClient</RootNamespace>
     <AssemblyName>HaspClearClient</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -37,12 +37,14 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\DSServiceReference\Reference.cs">
+    <Compile Include="Service References\HaspClearServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -50,25 +52,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\DSServiceReference\service.wsdl" />
-    <None Include="Service References\DSServiceReference\service.xsd">
+    <None Include="Service References\HaspClearServiceReference\HaspClearService.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\HaspClearServiceReference\WcfService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\DSServiceReference\" />
+    <WCFMetadataStorage Include="Service References\HaspClearServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\DSServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\HaspClearServiceReference\HaspClearService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\DSServiceReference\configuration.svcinfo" />
+    <None Include="Service References\HaspClearServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\DSServiceReference\Reference.svcmap">
+    <None Include="Service References\HaspClearServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HaspClearServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

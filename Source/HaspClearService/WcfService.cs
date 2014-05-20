@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 namespace ArmoSystems.ArmoGet.HaspClearService
 {
     [ServiceBehavior( ConcurrencyMode = ConcurrencyMode.Single, InstanceContextMode = InstanceContextMode.Single )]
-    internal sealed class WcfService : IService
+    public sealed class WcfService : IService
     {
         private const int IntervalBeetweenCalls = 10;
 
