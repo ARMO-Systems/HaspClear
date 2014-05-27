@@ -30,7 +30,6 @@ namespace ArmoSystems.ArmoGet.HaspClearService
                 RemoveSession( session );
             }
 
-            Thread.Sleep( 20 * 1000 );
             lastCall = DateTime.Now;
         }
 
