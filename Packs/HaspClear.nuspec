@@ -13,5 +13,6 @@
         <file src="..\Source\_output\Release\HaspClearService.exe" target="tools\HaspClearService.exe" />
         <file src="..\Source\_output\Release\HaspClearService.exe.config" target="tools\HaspClearService.exe.config" />
         <file src="..\Source\_output\Release\Newtonsoft.Json.dll" target="tools\Newtonsoft.Json.dll" />
+		<file src="..\Source\_output\Release\NLog.dll" target="tools\NLog.dll" />
     </files>
 </package>
