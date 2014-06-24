@@ -10,7 +10,7 @@ namespace ArmoSystems.ArmoGet.HaspClearClient
         {
             try
             {
-                new ServiceClient().RestartSLM();
+                new ServiceClient().RestartSLM( Environment.MachineName );
                 return 0;
             }
             catch ( Exception ex )

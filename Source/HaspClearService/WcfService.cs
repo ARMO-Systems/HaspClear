@@ -4,6 +4,7 @@ using System.Net;
 using System.ServiceModel;
 using System.Threading;
 using Newtonsoft.Json;
+using NLog;
 
 namespace ArmoSystems.ArmoGet.HaspClearService
 {
@@ -12,14 +13,20 @@ namespace ArmoSystems.ArmoGet.HaspClearService
     {
         private const int IntervalBeetweenCalls = 10;
 
+        private readonly Logger logger = LogManager.GetLogger( "WcfService" );
         private DateTime lastCall = DateTime.Now.Subtract( TimeSpan.FromSeconds( 5 ) );
 
-        public void RestartSLM()
+        public void RestartSLM( string computerName )
         {
+            logger.Info( computerName );
             var timeout = ( int ) ( IntervalBeetweenCalls - ( DateTime.Now - lastCall ).TotalSeconds );
             if ( timeout > 0 )
+            {
+                logger.Info( "Timeout: " + timeout );
                 Thread.Sleep( timeout * 1000 );
+            }
 
+            logger.Info( "Сбрасываю сессии" );
             while ( true )
             {
                 var session =
@@ -29,6 +36,7 @@ namespace ArmoSystems.ArmoGet.HaspClearService
                     break;
                 RemoveSession( session );
             }
+            logger.Info( "Сессии сброшены" );
 
             lastCall = DateTime.Now;
         }

@@ -16,10 +16,10 @@ namespace ArmoSystems.ArmoGet.HaspClearClient.HaspClearServiceReference {
     public interface IService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RestartSLM", ReplyAction="http://tempuri.org/IService/RestartSLMResponse")]
-        void RestartSLM();
+        void RestartSLM(string computerName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RestartSLM", ReplyAction="http://tempuri.org/IService/RestartSLMResponse")]
-        System.Threading.Tasks.Task RestartSLMAsync();
+        System.Threading.Tasks.Task RestartSLMAsync(string computerName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,12 +49,12 @@ namespace ArmoSystems.ArmoGet.HaspClearClient.HaspClearServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public void RestartSLM() {
-            base.Channel.RestartSLM();
+        public void RestartSLM(string computerName) {
+            base.Channel.RestartSLM(computerName);
         }
         
-        public System.Threading.Tasks.Task RestartSLMAsync() {
-            return base.Channel.RestartSLMAsync();
+        public System.Threading.Tasks.Task RestartSLMAsync(string computerName) {
+            return base.Channel.RestartSLMAsync(computerName);
         }
     }
 }

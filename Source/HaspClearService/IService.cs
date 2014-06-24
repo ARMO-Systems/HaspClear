@@ -6,6 +6,6 @@ namespace ArmoSystems.ArmoGet.HaspClearService
     public interface IService
     {
         [OperationContract]
-        void RestartSLM();
+        void RestartSLM( string computerName );
     }
 }

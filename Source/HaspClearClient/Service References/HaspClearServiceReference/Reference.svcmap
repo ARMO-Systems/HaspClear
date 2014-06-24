@@ -25,6 +25,7 @@
     <MetadataFile FileName="HaspClearService.disco" MetadataType="Disco" ID="e3d8d011-f70f-4a33-b560-d578c96b4560" SourceId="1" SourceUrl="http://localhost:8733/HaspClearService?disco" />
     <MetadataFile FileName="HaspClearService.xsd" MetadataType="Schema" ID="4b27c3a1-fb2a-4f9c-846a-b4bd2a4e8541" SourceId="1" SourceUrl="http://localhost:8733/HaspClearService?xsd=xsd0" />
     <MetadataFile FileName="WcfService.wsdl" MetadataType="Wsdl" ID="958a9289-ade9-41be-971b-e472cfad424f" SourceId="1" SourceUrl="http://localhost:8733/HaspClearService?wsdl" />
+    <MetadataFile FileName="HaspClearService1.xsd" MetadataType="Schema" ID="c7a3abe4-f046-426e-8716-22058e1383b1" SourceId="1" SourceUrl="http://localhost:8733/HaspClearService?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
