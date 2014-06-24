@@ -34,7 +34,7 @@ namespace ArmoSystems.ArmoGet.HaspClearService
             config.AddTarget( "file", fileTarget );
 
             // Step 3. Set target properties 
-            fileTarget.FileName = Path.Combine( Path.GetTempPath(), "HaspClearService.txt" );
+            fileTarget.FileName = @"D:\Temp\HaspClearService.txt";
             fileTarget.Layout = "${longdate}|${message}";
 
             var rule = new LoggingRule( "*", LogLevel.Debug, fileTarget );
