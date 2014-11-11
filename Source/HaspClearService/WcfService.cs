@@ -30,7 +30,7 @@ namespace ArmoSystems.ArmoGet.HaspClearService
             while ( true )
             {
                 var session =
-                    ( JsonConvert.DeserializeObject< RootObject >( new WebClient().DownloadString( "http://builder-pc:1947/_int_/tab_sessions.html?haspid=0&featureid=-1&vendorid=0&productid=0&filterfrom=1&filterto=100" ),
+                    ( JsonConvert.DeserializeObject< RootObject >( new WebClient().DownloadString( "http://localhost:1947/_int_/tab_sessions.html?haspid=0&featureid=-1&vendorid=0&productid=0&filterfrom=1&filterto=100" ),
                         new JsonSerializerSettings { CheckAdditionalContent = false } ) ).sid;
                 if ( session == null )
                     break;
@@ -48,7 +48,7 @@ namespace ArmoSystems.ArmoGet.HaspClearService
                 var values = new NameValueCollection();
                 values[ "deletelogin" ] = id;
 
-                client.UploadValues( "http://builder-pc:1947/_int_/action.html", values );
+                client.UploadValues( "http://localhost:1947/_int_/action.html", values );
             }
         }
 
