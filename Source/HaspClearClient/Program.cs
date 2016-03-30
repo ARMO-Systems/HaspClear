@@ -1,8 +1,5 @@
 ﻿using System;
 using ArmoSystems.ArmoGet.HaspClearClient.HaspClearServiceReference;
-using NLog;
-using NLog.Config;
-using NLog.Targets;
 
 namespace ArmoSystems.ArmoGet.HaspClearClient
 {
@@ -11,23 +8,24 @@ namespace ArmoSystems.ArmoGet.HaspClearClient
         [STAThread]
         private static int Main()
         {
-            SetupLog();
-            var logger = LogManager.GetLogger( "WcfService" );
+            // SetupLog();
+            //var logger = LogManager.GetLogger( "WcfService" );
             try
             {
-                logger.Info( "Вызываю сервис" );
+                //  logger.Info( "Вызываю сервис" );
                 new ServiceClient().RestartSLM( Environment.MachineName );
-                logger.Info( "Успешно сброшены лицензии" );
+                //logger.Info( "Успешно сброшены лицензии" );
                 return 0;
             }
             catch ( Exception ex )
             {
-                logger.Info( ex.ToString() );
-                Console.WriteLine( ex.ToString() );
+                //logger.Info( ex.ToString() );
+                //Console.WriteLine( ex.ToString() );
                 return -1;
             }
         }
 
+/*
         private static void SetupLog()
         {
             var config = new LoggingConfiguration();
@@ -44,6 +42,6 @@ namespace ArmoSystems.ArmoGet.HaspClearClient
 
             // Step 5. Activate the configuration
             LogManager.Configuration = config;
-        }
+        }*/
     }
 }
