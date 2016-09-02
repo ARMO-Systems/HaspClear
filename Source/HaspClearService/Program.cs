@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
 using System.ServiceProcess;
 using System.Threading;
 using NLog;

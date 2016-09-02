@@ -27,19 +27,10 @@ namespace ArmoSystems.ArmoGet.HaspClearService
             }
         }
 
-        protected override void OnStop()
-        {
-            host.Close();
-        }
+        protected override void OnStop() => host.Close();
 
-        public void DebugStart()
-        {
-            OnStart( null );
-        }
+        public void DebugStart() => OnStart( null );
 
-        public void DebugStop()
-        {
-            OnStop();
-        }
+        public void DebugStop() => OnStop();
     }
 }

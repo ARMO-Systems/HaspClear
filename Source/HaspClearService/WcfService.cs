@@ -11,15 +11,17 @@ namespace ArmoSystems.ArmoGet.HaspClearService
     [ServiceBehavior( ConcurrencyMode = ConcurrencyMode.Single, InstanceContextMode = InstanceContextMode.Single )]
     public sealed class WcfService : IService
     {
-        private const int IntervalBeetweenCalls = 20;
+        private const int IntervalBeetweenCalls = 35;
+        private static DateTime _lastCall = DateTime.Now.Subtract( TimeSpan.FromSeconds( 5 ) );
 
         private readonly Logger logger = LogManager.GetLogger( "WcfService" );
-        private DateTime lastCall = DateTime.Now.Subtract( TimeSpan.FromSeconds( 5 ) );
 
         public void RestartSLM( string computerName )
         {
             logger.Info( computerName );
-            var timeout = ( int ) ( IntervalBeetweenCalls - ( DateTime.Now - lastCall ).TotalSeconds );
+            logger.Info( _lastCall.ToLongTimeString() );
+            var timeout = ( int ) ( IntervalBeetweenCalls - ( DateTime.Now - _lastCall ).TotalSeconds );
+            logger.Info( timeout );
             if ( timeout > 0 )
             {
                 logger.Info( "Timeout: " + timeout );
@@ -30,34 +32,33 @@ namespace ArmoSystems.ArmoGet.HaspClearService
             while ( true )
             {
                 var session =
-                    ( JsonConvert.DeserializeObject< RootObject >( new WebClient().DownloadString( "http://localhost:1947/_int_/tab_sessions.html?haspid=0&featureid=-1&vendorid=0&productid=0&filterfrom=1&filterto=100" ),
-                        new JsonSerializerSettings { CheckAdditionalContent = false } ) ).sid;
+                    JsonConvert.DeserializeObject< RootObject >( new WebClient().DownloadString( "http://localhost:1947/_int_/tab_sessions.html?haspid=0&featureid=-1&vendorid=0&productid=0&filterfrom=1&filterto=100" ),
+                        new JsonSerializerSettings { CheckAdditionalContent = false } ).sid;
                 if ( session == null )
                     break;
+
                 RemoveSession( session );
             }
+
             logger.Info( "Сессии сброшены" );
 
-            lastCall = DateTime.Now;
+            _lastCall = DateTime.Now;
         }
 
         private static void RemoveSession( string id )
         {
             using ( var client = new WebClient() )
             {
-                var values = new NameValueCollection();
-                values[ "deletelogin" ] = id;
-
-                client.UploadValues( "http://localhost:1947/_int_/action.html", values );
+                client.UploadValues( "http://localhost:1947/_int_/action.html", new NameValueCollection { ["deletelogin"] = id } );
             }
         }
 
-// ReSharper disable once ClassNeverInstantiated.Local
+        // ReSharper disable once ClassNeverInstantiated.Local
         private class RootObject
         {
-// ReSharper disable UnusedMember.Local
+            // ReSharper disable UnusedMember.Local
             public string index { get; set; }
-// ReSharper disable once UnusedAutoPropertyAccessor.Local
+            // ReSharper disable once UnusedAutoPropertyAccessor.Local
             public string sid { get; set; }
             public string acc { get; set; }
             public string vendorid { get; set; }
@@ -81,7 +82,7 @@ namespace ArmoSystems.ArmoGet.HaspClearService
             public string lm_build { get; set; }
             public string api_version { get; set; }
             public string ddis { get; set; }
-// ReSharper restore UnusedMember.Local
+            // ReSharper restore UnusedMember.Local
         }
     }
 }
