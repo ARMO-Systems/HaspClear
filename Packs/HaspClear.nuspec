@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-    <metadata>
-        <id>HaspClear</id>
-        <version>1.0.0</version>
-        <authors>Andr</authors>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Очистка сессий HASP ключа</description>
-    </metadata>
-    <files>
-        <file src="..\Source\_output\Release\HaspClearClient.exe" target="tools\HaspClearClient.exe" />
-        <file src="..\Source\_output\Release\HaspClearClient.exe.config" target="tools\HaspClearClient.exe.config" />
-        <file src="..\Source\_output\Release\HaspClearService.exe" target="tools\HaspClearService.exe" />
-        <file src="..\Source\_output\Release\HaspClearService.exe.config" target="tools\HaspClearService.exe.config" />
-        <file src="..\Source\_output\Release\Newtonsoft.Json.dll" target="tools\Newtonsoft.Json.dll" />
-		<file src="..\Source\_output\Release\NLog.dll" target="tools\NLog.dll" />
-    </files>
+  <metadata>
+    <id>HaspClear</id>
+    <version>1.0.2</version>
+    <authors>Andr</authors>
+    <owners>Andr</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Очистка сессий HASP ключа</description>
+  </metadata>
+  <files>
+    <file src="tools\HaspClearClient.exe" target="tools\HaspClearClient.exe" />
+    <file src="tools\HaspClearClient.exe.config" target="tools\HaspClearClient.exe.config" />
+    <file src="tools\HaspClearService.exe" target="tools\HaspClearService.exe" />
+    <file src="tools\HaspClearService.exe.config" target="tools\HaspClearService.exe.config" />
+    <file src="tools\Newtonsoft.Json.dll" target="tools\Newtonsoft.Json.dll" />
+    <file src="tools\NLog.dll" target="tools\NLog.dll" />
+  </files>
 </package>

@@ -11,7 +11,7 @@ namespace ArmoSystems.ArmoGet.HaspClearService
     [ServiceBehavior( ConcurrencyMode = ConcurrencyMode.Single, InstanceContextMode = InstanceContextMode.Single )]
     public sealed class WcfService : IService
     {
-        private const int IntervalBeetweenCalls = 35;
+        private const int IntervalBeetweenCalls = 80;
         private static DateTime _lastCall = DateTime.Now.Subtract( TimeSpan.FromSeconds( 5 ) );
 
         private readonly Logger logger = LogManager.GetLogger( "WcfService" );
